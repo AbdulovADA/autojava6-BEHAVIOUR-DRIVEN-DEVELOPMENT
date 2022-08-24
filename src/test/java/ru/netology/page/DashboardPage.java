@@ -22,7 +22,6 @@ public class DashboardPage {
 
     }
 
-
     private int extractBalance(String text) {
         val start = text.indexOf(balanceStart);
         val finish = text.indexOf(balanceFinish);
@@ -30,8 +29,8 @@ public class DashboardPage {
         return Integer.parseInt(value);
     }
 
-    public int getIdAccountBalance(DataHelper.Card selectCard) {
-        String text = cards.find(Condition.attribute(searchAttribute,selectCard.getId())).getText();
+    public int getCardBalance(DataHelper.Card selectCard) {
+        String text = cards.find(Condition.attribute(searchAttribute, selectCard.getId())).getText();
         return extractBalance(text);
     }
 
